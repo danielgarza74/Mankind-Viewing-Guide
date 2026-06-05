@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANKIND: THE STORY OF ALL OF US - Series Viewing Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            /* Background reflecting the sky in the poster */
+            background: linear-gradient(180deg, #c4dbe6 0%, #e8f0f3 30%, #f6e8cc 70%, #d4a66a 100%);
+            background-attachment: fixed;
+            color: #2c2c2c; /* Dark text for contrast against light background */
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .title-font { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 900;
+        }
+        .serif-accent { font-family: 'Playfair Display', serif; }
+        
+        /* Cracked earth texture text effect for the main title */
+        .stone-text {
+            background-image: url('https://www.transparenttextures.com/patterns/cracked-earth.png');
+            background-color: #8b5a2b; /* Deep earth brown */
+            background-blend-mode: multiply;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2), 
+                         -1px -1px 0 rgba(255,255,255,0.4);
+        }
+
+        /* The bright sun glow behind the title */
+        .sun-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 200px;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Silhouette style cards */
+        .episode-card {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(240,230,210,0.9));
+            border: 1px solid rgba(139, 90, 43, 0.2);
+            border-bottom: 4px solid #4a3c31; /* Silhouette baseline */
+            border-radius: 8px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        /* Sunburst effect on hover */
+        .episode-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 235, 180, 0.4) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(139, 90, 43, 0.15);
+            border-bottom-color: #8b5a2b; /* Warmer brown on hover */
+        }
+
+        .episode-card:hover::before {
+            opacity: 1;
+        }
+
+        .episode-card h2 {
+            color: #3e2723; /* Very dark brown, almost black */
+        }
+
+        /* Ground silhouette element at the bottom */
+        .ground-silhouette {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15vh;
+            background: #1a1510; /* Very dark silhouette color */
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            z-index: -1;
+            clip-path: polygon(0% 20%, 10% 15%, 20% 25%, 35% 10%, 50% 20%, 65% 5%, 80% 25%, 90% 15%, 100% 25%, 100% 100%, 0% 100%);
+        }
+        
+        .grass-overlay {
+             position: fixed;
+             bottom: 0;
+             left: 0;
+             width: 100%;
+             height: 10vh;
+             background: linear-gradient(to top, rgba(20,30,10,0.8), transparent);
+             z-index: -1;
+        }
+
+        .divider-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(139, 90, 43, 0.5), transparent);
+            width: 60%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-32">
+    <!-- Environmental background elements -->
+    <div class="ground-silhouette"></div>
+    <div class="grass-overlay"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 z-10">
+        <header class="mb-20 text-center relative">
+            <div class="sun-glow"></div>
+            
+            <p class="title-font text-lg md:text-xl text-[#4a3c31] tracking-[0.4em] uppercase font-light mb-2">
+                The Story of All of Us
+            </p>
+            <h1 class="title-font text-6xl md:text-8xl lg:text-9xl text-center tracking-tight mb-8 stone-text">
+                MANKIND
+            </h1>
+            
+            <p class="serif-accent text-lg md:text-xl text-[#5a4a3e] max-w-2xl mx-auto italic leading-relaxed mt-8">
+                A 12-part historical documentary series chronicling the history of humanity from the dawn of civilization to the modern era.
+            </p>
+            
+            <div class="divider-line mt-12"></div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            <!-- Episode 1 -->
+            <a href="Inventors/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 01</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">Inventors</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Traces the dawn of mankind, from mastering fire and the Agricultural Revolution to the construction of the first cities and pyramids, alongside the birth of early warfare.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Episode 2 -->
+            <a href="Iron-Men/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 02</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">Iron Men</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Examines the collapse of the Bronze Age empires, the democratization of power through the discovery of iron, and the emergence of early democracy in Athens.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Episode 3 -->
+            <a href="Empires/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 03</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">Empires</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Focuses on the expansive trade networks and infrastructure of the Roman Empire, which inadvertently facilitated the rapid, global spread of Christianity.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Episode 4 -->
+            <a href="Warriors/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 04</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">Warriors</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Explores the power vacuums left by the fall of Rome, covering the rapid expansion of Islam, the Viking invasions, and the Crusades.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Episode 5 -->
+            <a href="Plague/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 05</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">Plague</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Details the brutal conquests of Genghis Khan, which created the largest contiguous land empire in history, and the devastating sweep of the bubonic plague.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Episode 6 -->
+            <a href="Survivors/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 06</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">Survivors</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Highlights the European rebirth fueled by African gold, the rise of Venice as a financial hub, and the transformative power of firearms in unifying China.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Episode 7 -->
+            <a href="New-World/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 07</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">New World</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Follows the Vikings' journey to the Americas, the rise of the sophisticated Aztec civilization, and the eventual collision of the Old and New Worlds following Columbus's voyages.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Episode 8 -->
+            <a href="Treasure/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 08</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">Treasure</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Centers on the massive silver strikes in the Americas that birthed true global trade, tracking the resulting economic booms and the severe human cost of this new system.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Episode 9 -->
+            <a href="Pioneers/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 09</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">Pioneers</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Covers the age of navigation, the early colonization of North America, the lucrative global fur trade, and the dawn of the Scientific Revolution.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Episode 10 -->
+            <a href="Revolutions/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 10</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">Revolutions</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Focuses on the fight for liberty during the American Revolution and the massive societal and economic shifts driven by the Industrial Revolution.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Episode 11 -->
+            <a href="Speed/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 11</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">Speed</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Examines the post-Civil War era defined by mass production, Japan's incredibly rapid modernization, and the disasters that occurred when progress outpaced safety.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Episode 12 -->
+            <a href="New-Frontiers/index.html" class="episode-card group p-8 flex flex-col h-full">
+                <div class="mb-4">
+                    <span class="title-font text-[#d4a66a] text-xs tracking-widest font-bold uppercase border-b border-[#d4a66a]/50 pb-1">Episode 12</span>
+                </div>
+                <h2 class="title-font text-3xl font-bold mb-3 transition-colors group-hover:text-[#8b5a2b]">New Frontiers</h2>
+                <div class="mt-auto pt-4">
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Concludes the series in the modern age, looking at agricultural breakthroughs, the discovery of penicillin, and humanity's continued drive to explore and innovate.
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <footer class="mt-24 pt-8 text-center relative z-20">
+            <p class="title-font text-[#8b5a2b] tracking-[0.2em] text-sm uppercase font-bold">History Channel &bull; 2012</p>
+        </footer>
+    </div>
+</body>
+</html>
